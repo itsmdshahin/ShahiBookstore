@@ -11,7 +11,7 @@ const MyBooks = ({ userId, token }) => {
         const fetchUserBooks = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:5000/api/books/user/${userId}`,
+                    `https://shahi-bookstore.vercel.app/api/books/user/${userId}`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -35,7 +35,7 @@ const MyBooks = ({ userId, token }) => {
 
     const handleDelete = async (bookId) => {
         try {
-            await axios.delete(`http://localhost:5000/api/deletebook/${bookId}`);
+            await axios.delete(`https://shahi-bookstore.vercel.app/api/deletebook/${bookId}`);
             fetchUserBooks(); // Refresh the book list after deletion
         } catch (error) {
             console.error('Error deleting book:', error);
@@ -50,7 +50,7 @@ const MyBooks = ({ userId, token }) => {
 
         try {
             await axios.put(
-                `http://localhost:5000/api/updatebook/${bookId}`,
+                `https://shahi-bookstore.vercel.app/api/updatebook/${bookId}`,
                 {
                     title: newTitle === null ? title: newTitle,
                     author: newAuthor === null ? author : newAuthor,

@@ -13,7 +13,7 @@ const BookDetail = () => {
   }, [id]);
 
   const fetchBookDetails = () => {
-    axios.get(`http://localhost:5000/api/allbooks/${id}`)
+    axios.get(`https://shahi-bookstore.vercel.app/api/allbooks/${id}`)
       .then(response => {
         setBook(response.data);
       })

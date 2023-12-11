@@ -14,7 +14,7 @@ const BookList = () => {
   }, []);
 
   const fetchBooks = () => {
-    axios.get('http://localhost:5000/api/allbooks')
+    axios.get('https://shahi-bookstore.vercel.app/api/allbooks')
       .then(response => {
         const booksWithImages = response.data.map(book => {
           return {
@@ -31,7 +31,7 @@ const BookList = () => {
 
   const handleDelete = async (bookId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/deletebook/${bookId}`);
+      await axios.delete(`https://shahi-bookstore.vercel.app/api/deletebook/${bookId}`);
       fetchBooks(); // Refresh the book list after deletion
     } catch (error) {
       console.error('Error deleting book:', error);

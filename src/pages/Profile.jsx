@@ -29,7 +29,7 @@ const Profile = () => {
       try {
         // console.log("Fetching data for userId : "+userId);
         const response = await axios.get(
-          `http://localhost:5000/api/profile/${userId}`,
+          `https://shahi-bookstore.vercel.app/api/profile/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
