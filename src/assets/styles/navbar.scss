@@ -1,0 +1,45 @@
+/* navbar.scss */
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+
+  .headerul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-right: 20px;
+
+      a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #e74c3c; /* Change color on hover */
+        }
+      }
+    }
+
+    .active-link {
+      /* Style for the active link */
+      text-decoration: underline;
+    }
+  }
+}

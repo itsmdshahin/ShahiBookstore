@@ -1,0 +1,46 @@
+// src/assets/styles/Home.scss
+.home {
+    .welcome-section {
+      position: relative;
+      text-align: center;
+      color: #fff; // Set text color to white or your preferred color
+      height: 400px; // Adjust the height based on your design
+      overflow: hidden;
+  
+      .welcome-bg {
+        // Use a background image for the welcome section
+        background-image: url('https://wallpaperaccess.com/full/124383.jpg');
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.7; // Adjust the opacity as needed
+      }
+  
+      h1 {
+        position: relative;
+        z-index: 1;
+        margin-top: 150px; // Adjust the margin based on your design
+      }
+    }
+  
+    .reviews-section {
+      text-align: center;
+      padding: 20px;
+  
+      h2 {
+        margin-bottom: 20px;
+      }
+  
+      .reviews-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+    }
+  }
+  

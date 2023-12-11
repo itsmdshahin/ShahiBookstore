@@ -1,0 +1,56 @@
+// BookForm.scss
+
+.bookformdiv {
+  // max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  .bookformdtitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .bookforms {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 18px;
+      margin-bottom: 10px;
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          border-color: #007bff;
+          outline: none;
+        }
+      }
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+}
