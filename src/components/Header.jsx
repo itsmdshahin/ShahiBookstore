@@ -15,7 +15,7 @@ const Header = () => {
           <a href='/'>Home</a>
         </li>
         <li>
-          <a href='/addabook'>Add a Book</a>
+          <a href='/AddABook'>Add a Book</a>
         </li>
         <li>
           <a href='/BookList'>All Books</a>
@@ -23,7 +23,7 @@ const Header = () => {
         {isLoggedIn ? (<li>
           <a href='/Profile'>Profile</a>
         </li>) : (<li>
-          <a href='/register'>Register</a>
+          <a href='/Register'>Register</a>
         </li>)}
 
 
