@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
+  const apiURL =  'http://localhost:5000/api/login' || 'https://shahibookstore.onrender.com/api/login';
   const nagivate = useNavigate();
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
@@ -23,7 +24,7 @@ const Login = () => {
     };
     console.log(email + " " + password);
     try {
-      const response = await fetch('https://shahi-bookstore.vercel.app/api/login', {
+      const response = await fetch(apiURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

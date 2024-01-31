@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../assets/styles/BookList.scss';
 
 const BookList = () => {
+  
+  const apiURL =  'http://localhost:5000' || 'https://shahibookstore.onrender.com';
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -14,7 +16,7 @@ const BookList = () => {
   }, []);
 
   const fetchBooks = () => {
-    axios.get('https://shahi-bookstore.vercel.app/api/allbooks')
+    axios.get( `${apiURL}/api/allbooks`)
       .then(response => {
         const booksWithImages = response.data.map(book => {
           return {
@@ -31,7 +33,7 @@ const BookList = () => {
 
   const handleDelete = async (bookId) => {
     try {
-      await axios.delete(`https://shahi-bookstore.vercel.app/api/deletebook/${bookId}`);
+      await axios.delete(`${apiURL}/api/deletebook/${bookId}`);
       fetchBooks(); // Refresh the book list after deletion
     } catch (error) {
       console.error('Error deleting book:', error);

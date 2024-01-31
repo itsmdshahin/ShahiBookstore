@@ -5,6 +5,7 @@ import '../assets/styles/register.scss';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
+  const apiURL =  'http://localhost:5000' || 'https://shahibookstore.onrender.com';
   const navigator = useNavigate();
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -39,7 +40,7 @@ const Register = () => {
 
     try {
 
-      const response = await fetch('https://shahi-bookstore.vercel.app/api/register', {
+      const response = await fetch(`${apiURL}/api/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

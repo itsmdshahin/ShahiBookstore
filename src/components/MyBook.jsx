@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import '../assets/styles/myBooks.scss';
 
 const MyBooks = ({ userId, token }) => {
+
+    const apiURL = 'http://localhost:5000' || 'https://shahibookstore.onrender.com';
     const [userBooks, setUserBooks] = useState([]);
 
     useEffect(() => {
@@ -11,7 +13,7 @@ const MyBooks = ({ userId, token }) => {
         const fetchUserBooks = async () => {
             try {
                 const response = await axios.get(
-                    `https://shahi-bookstore.vercel.app/api/books/user/${userId}`,
+                    `${apiURL}/api/books/user/${userId}`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -35,7 +37,7 @@ const MyBooks = ({ userId, token }) => {
 
     const handleDelete = async (bookId) => {
         try {
-            await axios.delete(`https://shahi-bookstore.vercel.app/api/deletebook/${bookId}`);
+            await axios.delete(`${apiURL}/api/deletebook/${bookId}`);
             fetchUserBooks(); // Refresh the book list after deletion
         } catch (error) {
             console.error('Error deleting book:', error);
@@ -50,9 +52,9 @@ const MyBooks = ({ userId, token }) => {
 
         try {
             await axios.put(
-                `https://shahi-bookstore.vercel.app/api/updatebook/${bookId}`,
+                `${apiURL}/api/updatebook/${bookId}`,
                 {
-                    title: newTitle === null ? title: newTitle,
+                    title: newTitle === null ? title : newTitle,
                     author: newAuthor === null ? author : newAuthor,
                 },
                 {
@@ -67,7 +69,7 @@ const MyBooks = ({ userId, token }) => {
             console.error('Error updating book:', error);
         }
     };
-    
+
 
 
     return (

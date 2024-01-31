@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const BookForm = () => {
+  
+  const apiURL =  'http://localhost:5000' || 'https://shahibookstore.onrender.com';
    const userid = localStorage.getItem('userId');
 
   const [formData, setFormData] = useState({
@@ -21,7 +23,7 @@ const BookForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios.post('https://shahi-bookstore.vercel.app/api/addabook', formData)
+    axios.post(`${apiURL}/api/addabook`, formData)
       .then(response => {
         console.log('Book added successfully:', response.data);
         alert('Sucessfully Add a Book');

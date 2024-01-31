@@ -25,6 +25,10 @@
     &:hover {
       transform: scale(1.05);
     }
+
+    .img-container{
+      overflow: hidden;
+    }
   
     .maintitle {
       font-size: 22px;

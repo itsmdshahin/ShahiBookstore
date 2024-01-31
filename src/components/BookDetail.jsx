@@ -5,6 +5,8 @@ import { useParams } from 'react-router-dom';
 import '../assets/styles/BookDetail.scss';
 
 const BookDetail = () => {
+  
+  const apiURL =  'http://localhost:5000' || 'https://shahibookstore.onrender.com';
   const { id } = useParams();
   const [book, setBook] = useState({});
 
@@ -13,7 +15,7 @@ const BookDetail = () => {
   }, [id]);
 
   const fetchBookDetails = () => {
-    axios.get(`https://shahi-bookstore.vercel.app/api/allbooks/${id}`)
+    axios.get(`${apiURL}/api/allbooks/${id}`)
       .then(response => {
         setBook(response.data);
       })

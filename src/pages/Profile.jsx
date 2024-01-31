@@ -5,6 +5,7 @@ import '../assets/styles/profile.scss';
 import MyBooks from '../components/MyBook';
 
 const Profile = () => {
+  const apiURL =  'http://localhost:5000' || 'https://shahibookstore.onrender.com';
   const [userProfile, setUserProfile] = useState({});
   const navigate = useNavigate();
   const userId = localStorage.getItem('userId'); // Fetch userId from localStorage
@@ -29,7 +30,7 @@ const Profile = () => {
       try {
         // console.log("Fetching data for userId : "+userId);
         const response = await axios.get(
-          `https://shahi-bookstore.vercel.app/api/profile/${userId}`,
+          `${apiURL}/api/profile/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
